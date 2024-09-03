@@ -11,7 +11,7 @@ const NavLinks = () =>{
   return(
       <nav className="NavLinks">
       <ul>
-          <h2>LightBringer</h2>
+          <h2 className="logo">LightBringer</h2>
           <li>
               <a href="/">Home</a>
           </li>

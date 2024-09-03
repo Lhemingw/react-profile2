@@ -44,13 +44,15 @@ nav ul li a:hover{
   background-color: #f8f9fa; /* Example background color */
   padding: 5px 10px;
   border: 1px solid #ccc;
+  display: grid;
+  grid-template-areas: "logo nav";
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-right: 2rem; /* Adds space between logo and links */
-  color: #333;  /* Ensure the color contrasts with the background */
+  margin-right: 10rem; /* Adds space between logo and links */
+  color: whitesmoke;  /* Ensure the color contrasts with the background */
 
 }
 

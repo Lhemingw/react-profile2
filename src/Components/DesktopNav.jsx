@@ -9,7 +9,7 @@
     // console.log ("hello");
      return(
         <nav className="DesktopNavigation">
-        <h2 className="logo">LightBringer</h2>
+        {/* <h2 className="logo">LightBringer</h2> */}
         
         <Navbar />
         
