@@ -1,18 +1,22 @@
 nav {
+  width: 100%;
+  height: 5em; 
     display: flex;
     align-items: center;
     justify-content: space-between;
+    justify-content: flex-start;
     background: purple;
+    align-items: center;
     /* padding: 20px 80px; */
     padding: 30px 50px 30px 50px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
   }
 
-  .NavLinks{
+   .NavLinks{
     height: 15vh;
     display: flex;
     margin-left: 2rem; /* Adds extra space to the left of the links */
-  }
+   } 
   nav ul{
     display: flex;
     flex-direction: row;
@@ -36,6 +40,37 @@ nav ul li a:hover{
     transition: .3s;
 }
 
+@media only screen and (max-width: 768px) {
+     .nav-menu {
+       display: none; /* Hide the nav menu by default */
+       display: flex;
+       position: fixed;
+       left: -100%;
+       top: 5rem;
+       flex-direction: column;
+       background-color: #fff;
+       width: 100%;
+       border-radius: 10px;
+       text-align: center;
+       transition: 0.3s;
+       box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+     }
+    }
+
+    .nav-menu.active {
+           left: 0;
+         }
+      
+         .nav-item {
+           margin: 2.5rem 0;
+         }
+      
+         .hamburger {
+           display: block;
+           cursor: pointer;
+         }
+        
+
 .DesktopNavigation {
   display: flex;
   align-items: center;
@@ -55,83 +90,93 @@ nav ul li a:hover{
   color: whitesmoke;  /* Ensure the color contrasts with the background */
 
 }
+.MobileNavigation{
+  display: none;
+}
 
+@media (max-width: 768px){
+}
+  .DesktopNavigation{
+      display: none;
+  }
 
-  /* #navbar {
+  .MobileNavigation{
+      display: flex;
+      align-items: center;
+      height: 15vh;
+      background-color: purple;
+  }
+
+  .NavLinks{
+     background-color: purple; 
+  }
+
+  /* nav{
+    width: 100%;
+    height: 5em;
+    background-color: rgb(37,39, 53);
     display: flex;
+    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    padding: 1em;  wrong nav
+  } */
+  
+  
+  .burger-menu {
+    height: 100%;
+    width: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
   }
   
-  #navbar li {
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
+  .burger-bar {
+    width: 4em;
+    height: 0.5em;
+    background-color: rgb(0, 183, 255);
+    border-radius: 0.5em;
   }
   
-  #navbar li a {
-    text-decoration: none;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #fff;
-    transition: 0.3s ease-in-out;
-  }
-  #navbar li a:hover,
-  #navbar li a.active {
-    color: #17cf97;
-  }
-  
-  #navbar li a:hover::after,
-  #navbar li a.active::after {
-    content: "";
-    width: 30%;
-    height: 2px;
-    background: #17cf97;
+  .menu{
+    width: 50%;
+    height: 100vh;
+    background-color: rgb(154, 181, 240);
     position: absolute;
-    bottom: -4px;
-    left: 20px;
+    top: 0;
+    z-index: -1;
   }
   
-  #mobile {
+  /*---------Sliding menu-------------- */
+  .hidden {
     display: none;
   }
   
-  #mobile i {
-    color: #fff;
-    align-items: center;
+  .visible{
+    display: inherit;
   }
   
-  @media screen and (max-width: 769px) {
-    #navbar {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      position: fixed;
-      top: 90px;
-      right: -300px;
-      width: 300px;
-      height: 100vh;
-      background: #2a3239;
-      box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
-      padding: 40px 0 0 10px;
-      transition: 0.3s ease-in-out;
-    }
+  /*-----------animation---------*/
+  /* clicked */
+  .burger-bar.clicked:nth-child(1){
+    transform: rotate(45deg) translate(0.75em, 1.25em);
+    transform: ease-out 0.5s;
+  }
   
-    #navbar.active {
-      right: 0px;
-    }
+  .burger-bar.clicked:nth-child(2){
+    transform: scale(0.1);
+    transform: ease-out 0.5s;
+  }
   
-    #navbar li {
-      margin-bottom: 25px;
-    } */
+  .burger-bar.clicked:nth-child(3){
+    transform: rotate(135deg) translate(-0.5em, 1em);
+    transform: ease-out 0.5s;
+  }
   
-    #mobile {
-      display: block;
-    }
-  
-    #mobile i {
-      font-size: 24px;
-      cursor: pointer;
-    }
-  
+  /*unclicked*/
+  .burger-bar.unclicked {
+    transform: rotate(0) translate(0);
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+  }

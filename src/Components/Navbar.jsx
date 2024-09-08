@@ -1,34 +1,47 @@
-import React, { useState } from "react";
-import styled from 'styled-components';
-import { FaBars } from 'react-icons/fa';
+import React, { useState, Link} from "react";
 import "./Navbar.css";
-import "./DesktopNav.jsx"
-
+import { TiThMenu } from "react-icons/ti";
 // import { Link, NavLink } from "react-router-dom";
+const NavLinks = () => {
+    // const Hamburger = <TiThMenu className="HamburgerMenu"
+    // size="30px" 
+    //  color="black" 
+    //  onClick={() => setClick(!click)} />
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
-const NavLinks = () =>{
-  return(
+  
+    const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+    };
+  
+    const closeMenu = () => {
+      setIsMenuOpen(false);
+    };
+  
+    return (
       <nav className="NavLinks">
-      <ul>
-          <h2 className="logo">LightBringer</h2>
-          <li>
-              <a href="/">Home</a>
+        <h2 className="logo">LightBringer</h2>
+        <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+          <TiThMenu className="HamburgerMenu" size="30px" color="black" />
+        </div>
+        <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+          <li className="nav-item">
+            <a href="/" className="nav-links" onClick={closeMenu}>Home</a>
           </li>
-          <li>
-              <a href="/#services">Services</a>
+          <li className="nav-item">
+            <a href="/#RunningStory" className="nav-links" onClick={closeMenu}>RunningStory</a>
           </li>
-          <li>
-              <a href="/#about">About</a> 
-              {/* Resume, awards, and ect goes here */}
+          <li className="nav-item">
+            <a href="/#about" className="nav-links" onClick={closeMenu}>About</a>
           </li>
-          <li>
-              <a href="/ReactProjects">ReactProjects</a>
+          <li className="nav-item">
+            <a href="/ReactProjects" className="nav-links" onClick={closeMenu}>ReactProjects</a>
           </li>
-      </ul>
-  </nav>
-  )
-}
+        </ul>
+      </nav>
+    );
+  };
+  
+  export default NavLinks;
 
-export default NavLinks;
 
