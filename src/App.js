@@ -1,16 +1,17 @@
 import Navbar from "./Components/Navbar";
 import "./Components/DesktopNav";
-// import Navbar from './../Components/NavBar/NavBar';
 import Home from "./Components/Home";
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
       <Navbar />
       <Home />
-
     </div>
+  </BrowserRouter>
   );
 }
 
