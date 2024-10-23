@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Menu from './Menu';
 import Categories from './Categories';
 import items from './Data';
+import './RestaurantMenu.css';
+
 
 const allCategories = ['all', ...new Set(items.map((item) => item.category))];
 
@@ -21,6 +23,8 @@ function RestaurantMenu() {
   };
 
   return (
+    <>
+    <div className='restaurant-menu-container'>
     <main>
       <section className="menu section">
         <div className="title">
@@ -35,6 +39,9 @@ function RestaurantMenu() {
         <Menu items={menuItems} />
       </section>
     </main>
+
+     </div>
+    </>
   );
 }
 
