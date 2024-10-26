@@ -9,8 +9,11 @@ import RestaurantMenu from "./Components/ReactProjects/ReactProjects1/Restaurant
 // import Items from './Data';
 import items from "/Users/Lucinda/react-profile2/src/Components/ReactProjects/ReactProjects1/Data.jsx";
 import Menu from './Components/ReactProjects/ReactProjects1/Menu';
-//I have error from below, trying to add stuff to make my reactproject 2 show up
-import ReactProjects2 from  './Components/ReactProjects/ReactProjects2';
+
+import ReactProjects2 from "./ReactProjects2/index2";
+
+// //I have error from below, trying to add stuff to make my reactproject 2 show up
+// import ReactProjects2 from  './Components/ReactProjects/ReactProjects2';
 // Import the new FoodOrderingApp component
 
 function App() {
@@ -23,7 +26,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/running-story" element={<RunningStory />} />
           <Route path="/ReactProjects/ReactProjects1" element={<RestaurantMenu items={items} />} />
-          <Route path="/ReactProjects2/" element={<ReactProjects2 />} /> {/* New route for food ordering app */}
+          <Route path="/ReactProjects2/" element={<ReactProjects2 />} /> 
           {/* Add other routes as needed */}
         </Routes>
       {/* <Home /> */}
